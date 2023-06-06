@@ -8,12 +8,9 @@ body {
     padding: 0;
     font-family: 'Geologica', sans-serif;
     font-weight: 600;
-}
-
-@media (max-width: 600px) {
-    body {
-        align-items: flex-start;
-    }
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
 }
 
 .form-container {
@@ -24,9 +21,21 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
     text-align: left;
+    margin: auto; /* This will horizontally center the form container */
 }
 
-input[type="text"], input[type="email"], select, input[type="range"] {
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px; /* Add padding on all sides for mobile */
+        width: calc(100% - 40px); /* Subtracting the left and right padding */
+    }
+    body {
+        align-items: flex-start;
+    }
+}
+
+
+.form-input {
     width: 100%;
     border: 1px solid #eee;
     padding: 10px;
@@ -35,7 +44,7 @@ input[type="text"], input[type="email"], select, input[type="range"] {
     box-sizing: border-box;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, select:focus {
+.form-input:focus {
     border-color: #007BFF;
 }
 
@@ -104,7 +113,7 @@ input[type="submit"]:hover {
     margin-right: 0;
 }
 
-input[type="date"] {
+.form-input-date {
     width: 100%;
     border: 1px solid #eee;
     padding: 10px;
@@ -114,11 +123,11 @@ input[type="date"] {
     background: #eee;
 }
 
-input[type="date"]:focus {
+.form-input-date:focus {
     border-color: #007BFF;
 }
 
-.input-row > select, .input-row > input[type="date"] {
+.input-row > select, .input-row > .form-input-date {
     width: 50%;
 }
 
@@ -136,17 +145,16 @@ footer p {
 }
 
 
-.input-row > div:last-child, .input-row > select:last-child, .input-row > input[type="date"]:last-child {
+.input-row > div:last-child, .input-row > select:last-child, .input-row > .form-input-date:last-child {
     margin-right: 0;
 }
 
 #container {
     left: 0px;
     top: -150px;
-    width: 100%;
     height: 100%;
     position: absolute;
-    z-index: -1;
+    z-index: -1;   
   }
   
   #animate{

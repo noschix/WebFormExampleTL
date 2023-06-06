@@ -64,13 +64,17 @@ function getEmoji() {
 
 function addCircle(delay, range, color) {
   setTimeout(function() {
-    var c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
+    // Ensure x-coordinate falls within the screen width
+    var xRange = [0, window.innerWidth - 30]; // subtract 30 to account for emoji size
+
+    var c = new Circle(xRange[0] + Math.random() * xRange[1], 80 + Math.random() * 4, color, {
       x: -0.15 + Math.random() * 0.3,
       y: 1 + Math.random() * 1
-    }, range);
+    }, xRange);
     circles.push(c);
   }, delay);
 }
+
 
 function clearCircles() {
     for (var i in circles) {
