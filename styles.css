@@ -1,0 +1,162 @@
+body {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+    }
+}
+
+.form-container {
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: left;
+}
+
+input[type="text"], input[type="email"], select, input[type="range"] {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    border-color: #007BFF;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    display: inline-block;
+    margin: 10px 0px;
+}
+
+input[type="checkbox"] {
+    margin: 20px 0px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #222;
+    font-family: 'Geologica', sans-serif;
+}
+
+input[type="submit"]:hover {
+    background-color: #28a745;
+}
+
+#message {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo {
+    display: block;
+    max-width: 40%;
+    margin: 0 auto;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-row > P {   
+    margin-right: 10px;
+}
+
+.input-row > div {
+    flex: 1;
+}
+
+.input-row > div:last-child {
+    margin-right: 0;
+}
+
+input[type="date"] {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #eee;
+}
+
+input[type="date"]:focus {
+    border-color: #007BFF;
+}
+
+.input-row > select, .input-row > input[type="date"] {
+    width: 50%;
+}
+
+footer p {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    color: rgb(96, 96, 96);
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+
+.input-row > div:last-child, .input-row > select:last-child, .input-row > input[type="date"]:last-child {
+    margin-right: 0;
+}
+
+#container {
+    left: 0px;
+    top: -150px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #animate{
+    margin: 0 auto;
+    width: 20px;
+    overflow: visible;
+    position: relative;
+  }
+  
+  .fade-out {
+    transition: opacity 1s;
+    opacity: 0 !important;
+  }
